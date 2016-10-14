@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		561B8D921DB0AAA9007CEBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D911DB0AAA9007CEBF6 /* AppDelegate.swift */; };
+		561B8D941DB0AAA9007CEBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D931DB0AAA9007CEBF6 /* ViewController.swift */; };
+		561B8D971DB0AAA9007CEBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561B8D951DB0AAA9007CEBF6 /* Main.storyboard */; };
+		561B8D991DB0AAA9007CEBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 561B8D981DB0AAA9007CEBF6 /* Assets.xcassets */; };
+		561B8D9C1DB0AAA9007CEBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561B8D9A1DB0AAA9007CEBF6 /* LaunchScreen.storyboard */; };
+		561B8DA71DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8DA61DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift */; };
+		561B8DB21DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8DB11DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		561B8DA31DB0AAAA007CEBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 561B8D861DB0AAA9007CEBF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561B8D8D1DB0AAA9007CEBF6;
+			remoteInfo = com.gerbil.GerbilFlicks;
+		};
+		561B8DAE1DB0AAAA007CEBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 561B8D861DB0AAA9007CEBF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 561B8D8D1DB0AAA9007CEBF6;
+			remoteInfo = com.gerbil.GerbilFlicks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		561B8D8E1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.gerbil.GerbilFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		561B8D911DB0AAA9007CEBF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		561B8D931DB0AAA9007CEBF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		561B8D961DB0AAA9007CEBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		561B8D981DB0AAA9007CEBF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		561B8D9B1DB0AAA9007CEBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		561B8D9D1DB0AAA9007CEBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		561B8DA21DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.gerbil.GerbilFlicksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		561B8DA61DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = com_gerbil_GerbilFlicksTests.swift; sourceTree = "<group>"; };
+		561B8DA81DB0AAAA007CEBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		561B8DAD1DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.gerbil.GerbilFlicksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		561B8DB11DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = com_gerbil_GerbilFlicksUITests.swift; sourceTree = "<group>"; };
+		561B8DB31DB0AAAA007CEBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		561B8D8B1DB0AAA9007CEBF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561B8D9F1DB0AAAA007CEBF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561B8DAA1DB0AAAA007CEBF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		561B8D851DB0AAA9007CEBF6 = {
+			isa = PBXGroup;
+			children = (
+				561B8D901DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks */,
+				561B8DA51DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests */,
+				561B8DB01DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests */,
+				561B8D8F1DB0AAA9007CEBF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		561B8D8F1DB0AAA9007CEBF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				561B8D8E1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks.app */,
+				561B8DA21DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests.xctest */,
+				561B8DAD1DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		561B8D901DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks */ = {
+			isa = PBXGroup;
+			children = (
+				561B8D911DB0AAA9007CEBF6 /* AppDelegate.swift */,
+				561B8D931DB0AAA9007CEBF6 /* ViewController.swift */,
+				561B8D951DB0AAA9007CEBF6 /* Main.storyboard */,
+				561B8D981DB0AAA9007CEBF6 /* Assets.xcassets */,
+				561B8D9A1DB0AAA9007CEBF6 /* LaunchScreen.storyboard */,
+				561B8D9D1DB0AAA9007CEBF6 /* Info.plist */,
+			);
+			path = com.gerbil.GerbilFlicks;
+			sourceTree = "<group>";
+		};
+		561B8DA51DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests */ = {
+			isa = PBXGroup;
+			children = (
+				561B8DA61DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift */,
+				561B8DA81DB0AAAA007CEBF6 /* Info.plist */,
+			);
+			path = com.gerbil.GerbilFlicksTests;
+			sourceTree = "<group>";
+		};
+		561B8DB01DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				561B8DB11DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift */,
+				561B8DB31DB0AAAA007CEBF6 /* Info.plist */,
+			);
+			path = com.gerbil.GerbilFlicksUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		561B8D8D1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561B8DB61DB0AAAA007CEBF6 /* Build configuration list for PBXNativeTarget "com.gerbil.GerbilFlicks" */;
+			buildPhases = (
+				561B8D8A1DB0AAA9007CEBF6 /* Sources */,
+				561B8D8B1DB0AAA9007CEBF6 /* Frameworks */,
+				561B8D8C1DB0AAA9007CEBF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = com.gerbil.GerbilFlicks;
+			productName = com.gerbil.GerbilFlicks;
+			productReference = 561B8D8E1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		561B8DA11DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561B8DB91DB0AAAA007CEBF6 /* Build configuration list for PBXNativeTarget "com.gerbil.GerbilFlicksTests" */;
+			buildPhases = (
+				561B8D9E1DB0AAAA007CEBF6 /* Sources */,
+				561B8D9F1DB0AAAA007CEBF6 /* Frameworks */,
+				561B8DA01DB0AAAA007CEBF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				561B8DA41DB0AAAA007CEBF6 /* PBXTargetDependency */,
+			);
+			name = com.gerbil.GerbilFlicksTests;
+			productName = com.gerbil.GerbilFlicksTests;
+			productReference = 561B8DA21DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		561B8DAC1DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 561B8DBC1DB0AAAA007CEBF6 /* Build configuration list for PBXNativeTarget "com.gerbil.GerbilFlicksUITests" */;
+			buildPhases = (
+				561B8DA91DB0AAAA007CEBF6 /* Sources */,
+				561B8DAA1DB0AAAA007CEBF6 /* Frameworks */,
+				561B8DAB1DB0AAAA007CEBF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				561B8DAF1DB0AAAA007CEBF6 /* PBXTargetDependency */,
+			);
+			name = com.gerbil.GerbilFlicksUITests;
+			productName = com.gerbil.GerbilFlicksUITests;
+			productReference = 561B8DAD1DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		561B8D861DB0AAA9007CEBF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "R-J Lim";
+				TargetAttributes = {
+					561B8D8D1DB0AAA9007CEBF6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					561B8DA11DB0AAAA007CEBF6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 561B8D8D1DB0AAA9007CEBF6;
+					};
+					561B8DAC1DB0AAAA007CEBF6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 561B8D8D1DB0AAA9007CEBF6;
+					};
+				};
+			};
+			buildConfigurationList = 561B8D891DB0AAA9007CEBF6 /* Build configuration list for PBXProject "com.gerbil.GerbilFlicks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 561B8D851DB0AAA9007CEBF6;
+			productRefGroup = 561B8D8F1DB0AAA9007CEBF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				561B8D8D1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks */,
+				561B8DA11DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksTests */,
+				561B8DAC1DB0AAAA007CEBF6 /* com.gerbil.GerbilFlicksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		561B8D8C1DB0AAA9007CEBF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561B8D9C1DB0AAA9007CEBF6 /* LaunchScreen.storyboard in Resources */,
+				561B8D991DB0AAA9007CEBF6 /* Assets.xcassets in Resources */,
+				561B8D971DB0AAA9007CEBF6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561B8DA01DB0AAAA007CEBF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561B8DAB1DB0AAAA007CEBF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		561B8D8A1DB0AAA9007CEBF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561B8D941DB0AAA9007CEBF6 /* ViewController.swift in Sources */,
+				561B8D921DB0AAA9007CEBF6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561B8D9E1DB0AAAA007CEBF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561B8DA71DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		561B8DA91DB0AAAA007CEBF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561B8DB21DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		561B8DA41DB0AAAA007CEBF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561B8D8D1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks */;
+			targetProxy = 561B8DA31DB0AAAA007CEBF6 /* PBXContainerItemProxy */;
+		};
+		561B8DAF1DB0AAAA007CEBF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 561B8D8D1DB0AAA9007CEBF6 /* com.gerbil.GerbilFlicks */;
+			targetProxy = 561B8DAE1DB0AAAA007CEBF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		561B8D951DB0AAA9007CEBF6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				561B8D961DB0AAA9007CEBF6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		561B8D9A1DB0AAA9007CEBF6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				561B8D9B1DB0AAA9007CEBF6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		561B8DB41DB0AAAA007CEBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		561B8DB51DB0AAAA007CEBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		561B8DB71DB0AAAA007CEBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = com.gerbil.GerbilFlicks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gerbil.com-gerbil-GerbilFlicks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		561B8DB81DB0AAAA007CEBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = com.gerbil.GerbilFlicks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gerbil.com-gerbil-GerbilFlicks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		561B8DBA1DB0AAAA007CEBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = com.gerbil.GerbilFlicksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gerbil.com-gerbil-GerbilFlicksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/com.gerbil.GerbilFlicks.app/com.gerbil.GerbilFlicks";
+			};
+			name = Debug;
+		};
+		561B8DBB1DB0AAAA007CEBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = com.gerbil.GerbilFlicksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gerbil.com-gerbil-GerbilFlicksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/com.gerbil.GerbilFlicks.app/com.gerbil.GerbilFlicks";
+			};
+			name = Release;
+		};
+		561B8DBD1DB0AAAA007CEBF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = com.gerbil.GerbilFlicksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gerbil.com-gerbil-GerbilFlicksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = com.gerbil.GerbilFlicks;
+			};
+			name = Debug;
+		};
+		561B8DBE1DB0AAAA007CEBF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = com.gerbil.GerbilFlicksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gerbil.com-gerbil-GerbilFlicksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = com.gerbil.GerbilFlicks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		561B8D891DB0AAA9007CEBF6 /* Build configuration list for PBXProject "com.gerbil.GerbilFlicks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561B8DB41DB0AAAA007CEBF6 /* Debug */,
+				561B8DB51DB0AAAA007CEBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		561B8DB61DB0AAAA007CEBF6 /* Build configuration list for PBXNativeTarget "com.gerbil.GerbilFlicks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561B8DB71DB0AAAA007CEBF6 /* Debug */,
+				561B8DB81DB0AAAA007CEBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		561B8DB91DB0AAAA007CEBF6 /* Build configuration list for PBXNativeTarget "com.gerbil.GerbilFlicksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561B8DBA1DB0AAAA007CEBF6 /* Debug */,
+				561B8DBB1DB0AAAA007CEBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		561B8DBC1DB0AAAA007CEBF6 /* Build configuration list for PBXNativeTarget "com.gerbil.GerbilFlicksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561B8DBD1DB0AAAA007CEBF6 /* Debug */,
+				561B8DBE1DB0AAAA007CEBF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 561B8D861DB0AAA9007CEBF6 /* Project object */;
+}
