@@ -1,0 +1,6 @@
+framework module Pods_GerbilFlicks {
+  umbrella header "Pods-GerbilFlicks-umbrella.h"
+
+  export *
+  module * { export * }
+}
