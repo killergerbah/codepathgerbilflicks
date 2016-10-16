@@ -11,15 +11,16 @@ import UIKit
 import AFNetworking
 import BFRadialWaveHUD
 
-class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate {
     
     let service = MovieDbService()
+    var category: MovieCategory = MovieCategory.NowPlaying
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var networkErrorView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         networkErrorView.isHidden = true
         let shadowPath = UIBezierPath(rect: networkErrorView.bounds)
         networkErrorView.layer.shadowColor = UIColor.black.cgColor
@@ -30,20 +31,28 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        if service.movies.count == 0 {
+        tabBarController?.delegate = self
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(refreshControl:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        refreshView(force: false)
+    }
+    
+    private func refreshView(force: Bool) {
+        title = category.name
+        if force || service.movies.count == 0 {
             let hud = BFRadialWaveHUD.init(view: self.view, fullScreen: false, circles: 10, circleColor: UIColor.white, mode: BFRadialWaveHUDMode.north, strokeWidth: 4.0)
             
             hud?.show(withMessage: "Gerbil Flicks")
             refresh(callback: { _ in hud?.dismiss() }, failureCallback: { _ in hud?.dismiss() })
         }
-        
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refreshControlAction(refreshControl:)), for: UIControlEvents.valueChanged)
-        tableView.insertSubview(refreshControl, at: 0)
+
     }
     
     private func refresh(callback: (Void) -> Void, failureCallback: (Void) -> Void) {
-        service.getNowPlaying(
+        service.getList(
             { movies in
                 self.networkErrorView.isHidden = true
                 self.tableView.isHidden = false
@@ -54,7 +63,8 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
                 self.networkErrorView.isHidden = false
                 self.tableView.isHidden = true
                 failureCallback()
-            }
+            },
+            category: category
         )
     }
     
@@ -98,6 +108,31 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         if let indexPath = indexPathOrNil, indexPath.row < service.movies.count {
             tableView.deselectRow(at: indexPath, animated:true)
             destination.movie = service.movies[indexPath.row]
+        }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard let navigationController = viewController as? UINavigationController else {
+            return
+        }
+        
+        // Hack: Go back to movies list if details are being shown at the moment
+        if navigationController.visibleViewController is GerbilFlicksDetailsViewController {
+            navigationController.popViewController(animated: false)
+        }
+
+        let destination = navigationController.visibleViewController
+        
+        if let vc = destination as? GerbilFlicksViewController {
+            switch (tabBarController.selectedIndex) {
+            case 1:
+                vc.category = MovieCategory.TopRated
+                break
+            default:
+                vc.category = MovieCategory.NowPlaying
+            }
+            
+            vc.refreshView(force: true)
         }
     }
 }

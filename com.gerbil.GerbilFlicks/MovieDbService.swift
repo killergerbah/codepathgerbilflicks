@@ -13,6 +13,7 @@ class MovieDbService {
     private static let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
     private static let baseUrl = "https://api.themoviedb.org"
     private static let nowPlayingUrl = "\(baseUrl)/3/movie/now_playing?api_key=\(apiKey)"
+    private static let topRatedUrl = "\(baseUrl)/3/movie/top_rated?api_key=\(apiKey)"
     private static let detailsUrl = "\(baseUrl)/3/movie"
     
     private static var movies: [Movie] = []
@@ -22,8 +23,9 @@ class MovieDbService {
         return MovieDbService.movies
     }
     
-    func getNowPlaying(_ callback: ([Movie]) -> Void, failureCallback: (Void) -> Void) {
-        request(MovieDbService.nowPlayingUrl, callback: callback, failureCallback: failureCallback, factory: { dict in
+    func getList(_ callback: ([Movie]) -> Void, failureCallback: (Void) -> Void, category: MovieCategory) {
+        let url = self.url(category: category)
+        request(url, callback: callback, failureCallback: failureCallback, factory: { dict in
             guard let results = dict["results"] as? NSArray else {
                 return []
             }
@@ -43,17 +45,23 @@ class MovieDbService {
         })
     }
     
+    private func url(category: MovieCategory) -> String {
+        switch (category) {
+            case MovieCategory.TopRated:
+                return MovieDbService.topRatedUrl
+            default:
+                return MovieDbService.nowPlayingUrl
+        }
+    }
+    
     func getDetails(_ id: Int, callback: (MovieDetails) -> Void, failureCallback: (Void) -> Void) {
         request("\(MovieDbService.detailsUrl)/\(id)?api_key=\(MovieDbService.apiKey)", callback: callback, failureCallback: failureCallback, factory: { dict in
             guard let genresArray = dict["genres"] as? NSArray,
-                let popularity = dict["popularity"] as? Double,
+                let popularity = dict["vote_average"] as? Double,
                 let runtime = dict["runtime"] as? Int,
                 let tagLine = dict["tagline"] as? String else {
-                    NSLog("----- shit")
                     return nil
             }
-            
-            NSLog("----- yeah")
             
             return MovieDetails(genres: self.genres(array: genresArray), popularity: popularity, runtime: TimeInterval(runtime) * 60, tagLine: tagLine)
         })
@@ -105,7 +113,7 @@ class MovieDbService {
             let title = dict["title"] as? String,
             let overview = dict["overview"] as? String,
             let imageUrl = dict["poster_path"] as? String,
-            let backgroundUrl = dict["backdrop_path"] as? String,
+            let backgroundUrl = dict["poster_path"] as? String,
             let releaseDate = dict["release_date"] as? String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-dd"

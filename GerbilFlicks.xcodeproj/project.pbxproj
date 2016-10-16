@@ -17,6 +17,7 @@
 		561B8DA71DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8DA61DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksTests.swift */; };
 		561B8DB21DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8DB11DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift */; };
 		562956661DB29B1E00DA4BAE /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562956651DB29B1E00DA4BAE /* MovieDetails.swift */; };
+		5629566A1DB4092600DA4BAE /* MovieCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562956691DB4092600DA4BAE /* MovieCategory.swift */; };
 		563D7E7F1DB1F46F003E64C4 /* GerbilFlicksDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D7E7E1DB1F46F003E64C4 /* GerbilFlicksDetailsViewController.swift */; };
 		565146BC1DB0BEB300E50645 /* MovieDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565146BB1DB0BEB300E50645 /* MovieDbService.swift */; };
 		565146BE1DB0BF3100E50645 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565146BD1DB0BF3100E50645 /* Movie.swift */; };
@@ -59,6 +60,7 @@
 		561B8DB11DB0AAAA007CEBF6 /* com_gerbil_GerbilFlicksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = com_gerbil_GerbilFlicksUITests.swift; sourceTree = "<group>"; };
 		561B8DB31DB0AAAA007CEBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		562956651DB29B1E00DA4BAE /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		562956691DB4092600DA4BAE /* MovieCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCategory.swift; sourceTree = "<group>"; };
 		563D7E7E1DB1F46F003E64C4 /* GerbilFlicksDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerbilFlicksDetailsViewController.swift; sourceTree = "<group>"; };
 		565146BB1DB0BEB300E50645 /* MovieDbService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDbService.swift; sourceTree = "<group>"; };
 		565146BD1DB0BF3100E50645 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				561B8D9A1DB0AAA9007CEBF6 /* LaunchScreen.storyboard */,
 				561B8D9D1DB0AAA9007CEBF6 /* Info.plist */,
 				565146BB1DB0BEB300E50645 /* MovieDbService.swift */,
+				562956691DB4092600DA4BAE /* MovieCategory.swift */,
 				565146BD1DB0BF3100E50645 /* Movie.swift */,
 				562956651DB29B1E00DA4BAE /* MovieDetails.swift */,
 			);
@@ -451,6 +454,7 @@
 				562956661DB29B1E00DA4BAE /* MovieDetails.swift in Sources */,
 				563D7E7F1DB1F46F003E64C4 /* GerbilFlicksDetailsViewController.swift in Sources */,
 				565146BC1DB0BEB300E50645 /* MovieDbService.swift in Sources */,
+				5629566A1DB4092600DA4BAE /* MovieCategory.swift in Sources */,
 				561B8D921DB0AAA9007CEBF6 /* AppDelegate.swift in Sources */,
 				565146BE1DB0BF3100E50645 /* Movie.swift in Sources */,
 				56B16CC11DB0D2C900B61211 /* GerbilFlicksTableViewCell.swift in Sources */,

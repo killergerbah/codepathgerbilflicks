@@ -35,7 +35,7 @@ class GerbilFlicksDetailsViewController: UIViewController {
 
         service.getDetails(movie.id, callback: { details in
             self.runtimeLabel.text = self.formatRuntime(details.runtime)
-            self.popularityLabel.text =  String(format: "%.2f%%", details.popularity)
+            self.popularityLabel.text =  "Rating: " + String(format: "%.2f", details.popularity)
             self.genresLabel.text = details.genres.joined(separator: ", ")
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseOut], animations: {
@@ -59,7 +59,7 @@ class GerbilFlicksDetailsViewController: UIViewController {
         
         overviewLabel.text = movie.overview
         overviewLabel.sizeToFit()
-        overviewScrollView.contentSize = CGSize(width: overviewScrollView.frame.size.width, height: overviewContainerView.frame.origin.y + dateLabel.frame.size.height + titleLabel.frame.size.height + overviewLabel.frame.size.height + detailsView.frame.size.height + 100)
+        overviewScrollView.contentSize = CGSize(width: overviewScrollView.frame.size.width, height: overviewContainerView.frame.origin.y + dateLabel.frame.size.height + titleLabel.frame.size.height + overviewLabel.frame.size.height + detailsView.frame.size.height + 150)
         
         if let backgroundUrl = URL(string: movie.backgroundUrl) {
             backgroundImageView.setImageWith(backgroundUrl)
