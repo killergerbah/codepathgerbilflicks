@@ -26,7 +26,6 @@ class GerbilFlicksDetailsViewController: UIViewController {
     @IBOutlet weak var detailsView: UIView!
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.runtimeLabel.text = ""

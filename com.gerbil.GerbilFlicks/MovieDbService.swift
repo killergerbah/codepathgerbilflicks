@@ -16,11 +16,19 @@ class MovieDbService {
     private static let topRatedUrl = "\(baseUrl)/3/movie/top_rated?api_key=\(apiKey)"
     private static let detailsUrl = "\(baseUrl)/3/movie"
     
-    private static var movies: [Movie] = []
-    private static var movieDetails: [Int: Movie] = [:]
+    private static var movies: [MovieCategory:[Movie]] = [
+        MovieCategory.NowPlaying:[],
+        MovieCategory.TopRated:[]
+    ]
     
-    var movies: [Movie] {
-        return MovieDbService.movies
+    var movies: [MovieCategory:[Movie]] {
+        get {
+            return MovieDbService.movies
+        }
+    }
+    
+    func movies(_ category: MovieCategory) -> [Movie] {
+        return MovieDbService.movies[category]!
     }
     
     func getList(_ callback: ([Movie]) -> Void, failureCallback: (Void) -> Void, category: MovieCategory) {
@@ -39,7 +47,7 @@ class MovieDbService {
                 }
             }
             
-            MovieDbService.movies = movies
+            MovieDbService.movies[category] = movies
             
             return movies
         })
