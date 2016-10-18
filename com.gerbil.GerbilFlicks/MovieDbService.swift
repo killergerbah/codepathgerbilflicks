@@ -128,7 +128,8 @@ class MovieDbService {
             return Movie(id: id,
                          title: title,
                          overview: overview,
-                         imageUrl: "https://image.tmdb.org/t/p/w185_and_h278_bestv2/\(imageUrl)",
+                         smallImageUrl: "https://image.tmdb.org/t/p/w185_and_h278_bestv2/\(imageUrl)",
+                         imageUrl: "https://image.tmdb.org/t/p/w342/\(imageUrl)",
                          backgroundUrl: "https://image.tmdb.org/t/p/original\(backgroundUrl)",
                          releaseDate: dateFormatter.date(from: releaseDate)
             )

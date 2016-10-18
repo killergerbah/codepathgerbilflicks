@@ -48,6 +48,9 @@ class GerbilFlicksDetailsViewController: UIViewController {
     }
     
     private func formatRuntime(_ runtime: TimeInterval) -> String {
+        guard runtime > 0 else {
+            return ""
+        }
         let hours = Int(runtime) / 3600
         let minutes = Int(runtime) / 60 % 60
         return "\(hours)h \(minutes)m"
@@ -60,8 +63,8 @@ class GerbilFlicksDetailsViewController: UIViewController {
         overviewLabel.sizeToFit()
         overviewScrollView.contentSize = CGSize(width: overviewScrollView.frame.size.width, height: overviewContainerView.frame.origin.y + dateLabel.frame.size.height + titleLabel.frame.size.height + overviewLabel.frame.size.height + detailsView.frame.size.height + 150)
         
-        if let backgroundUrl = URL(string: movie.backgroundUrl) {
-            backgroundImageView.setImageWith(backgroundUrl)
+        if let smallUrl = URL(string: movie.smallImageUrl), let backgroundUrl = URL(string: movie.backgroundUrl) {
+            backgroundImageView.setImageWith(smallImageUrl: smallUrl, largeImageUrl: backgroundUrl, placeholderImage: UIImage(named: "NowPlaying"))
         }
         
         if let date = movie.releaseDate {

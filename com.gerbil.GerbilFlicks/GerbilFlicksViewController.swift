@@ -13,27 +13,38 @@ import BFRadialWaveHUD
 
 class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    private static var _display: Display = Display.List
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var networkErrorView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var displaySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var retryLabel: UILabel!
     
     private let service = MovieDbService()
     private var category: MovieCategory = MovieCategory.NowPlaying
-    private var displayingView: UIView!
-    private var display: Display = Display.List
+    private var display: Display {
+        get {
+            return GerbilFlicksViewController._display
+        }
+        set {
+            GerbilFlicksViewController._display = newValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkErrorView.isHidden = true
+
         let shadowPath = UIBezierPath(rect: networkErrorView.bounds)
         networkErrorView.layer.shadowColor = UIColor.black.cgColor
         networkErrorView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         networkErrorView.layer.shadowOpacity = 0.5
         networkErrorView.layer.shadowPath = shadowPath.cgPath
-        
+        displayNetworkError(false)
+
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.alwaysBounceVertical = true
         collectionView.isHidden = true
         
         tableView.dataSource = self
@@ -42,11 +53,10 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         
         tabBarController?.delegate = self
         
-        
         insertRefreshControl(tableView)
         insertRefreshControl(collectionView)
         
-        setDisplaying(display)
+        displayView()
         refreshView(force: false)
     }
     
@@ -58,6 +68,7 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
     
     private func refreshView(force: Bool) {
         title = category.name
+        displayView()
         if force || service.movies(category).count == 0 {
             let hud = BFRadialWaveHUD.init(view: self.view, fullScreen: false, circles: 10, circleColor: UIColor.white, mode: BFRadialWaveHUDMode.north, strokeWidth: 4.0)
             
@@ -74,37 +85,50 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         }
         
         switch sc.selectedSegmentIndex {
-        case 0:
-            setDisplaying(Display.List)
-            break
-        case 1:
-            setDisplaying(Display.Grid)
-            break
-        default:
-            break
+            case 0:
+                display = Display.List
+                break
+            case 1:
+                display = Display.Grid
+                break
+            default:
+                break
+        }
+        
+        displayView()
+    }
+    
+    private func displayView() {
+        switch display {
+            case .List:
+                toggle(on: tableView, off: collectionView)
+                displaySegmentedControl.selectedSegmentIndex = 0
+                break
+            case .Grid:
+                toggle(on: collectionView, off: tableView)
+                displaySegmentedControl.selectedSegmentIndex = 1
+                break
         }
     }
     
-    private func setDisplaying(_ display: Display) {
-        displayingView?.isHidden = true
-        displayingView = display == Display.List ? tableView : collectionView
-        self.display = display
-        displayingView?.isHidden = false
-        displaySegmentedControl?.selectedSegmentIndex = display == Display.List ? 0 : 1
+    private func toggle(on: UIView?, off: UIView?) {
+        on?.isHidden = false
+        off?.isHidden = true
     }
     
     private func refresh(callback: (Void) -> Void, failureCallback: (Void) -> Void) {
+        toggleInteraction(false)
         service.getList(
             { movies in
-                self.networkErrorView.isHidden = true
-                self.displayingView.isHidden = false
+                self.displayNetworkError(false)
+                
                 self.tableView.reloadData()
                 self.collectionView.reloadData()
+                self.displayView()
                 callback()
             },
             failureCallback: { _ in
-                self.networkErrorView.isHidden = false
-                self.displayingView.isHidden = true
+                self.displayNetworkError(true)
                 failureCallback()
             },
             category: category
@@ -115,7 +139,25 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         refresh(callback: callback, failureCallback: { _ in })
     }
     
+    private func displayNetworkError(_ error: Bool) {
+        networkErrorView.isHidden = !error
+        toggleInteraction(!error)
+        if (error) {
+            retryLabel.alpha = 1
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.retryLabel.alpha = 0
+            })
+        }
+    }
+    
+    private func toggleInteraction(_ enabled: Bool) {
+        tabBarController?.tabBar.isUserInteractionEnabled = enabled
+        displaySegmentedControl.isUserInteractionEnabled = enabled
+    }
+    
     func refreshControlAction(refreshControl: UIRefreshControl) {
+        displayNetworkError(false)
         refresh(callback: { _ in refreshControl.endRefreshing() })
     }
 
@@ -134,8 +176,8 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         cell.overviewLabel.text = movie.overview
         cell.titleLabel.text = movie.title
         
-        if let url = URL(string: movie.imageUrl) {
-            cell.movieImageView.setImageWith(url)
+        if let smallUrl = URL(string: movie.smallImageUrl), let url = URL(string: movie.imageUrl) {
+            cell.movieImageView.setImageWith(smallImageUrl: smallUrl, largeImageUrl: url, placeholderImage: UIImage(named: "NowPlaying"))
         }
     
         return cell
@@ -150,7 +192,7 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         let movie = service.movies(category)[index]
         
         if let url = URL(string: movie.imageUrl) {
-            cell.movieImage.setImageWith(url)
+            cell.movieImage.setImageWith(url, placeholderImage: UIImage(named: "NowPlaying"))
         }
         
         return cell
@@ -200,14 +242,13 @@ class GerbilFlicksViewController: UIViewController, UITableViewDataSource, UITab
         
         if let vc = destination as? GerbilFlicksViewController {
             switch (tabBarController.selectedIndex) {
-            case 1:
-                vc.category = MovieCategory.TopRated
-                break
-            default:
-                vc.category = MovieCategory.NowPlaying
+                case 1:
+                    vc.category = MovieCategory.TopRated
+                    break
+                default:
+                    vc.category = MovieCategory.NowPlaying
             }
             
-            vc.setDisplaying(self.display)
             vc.refreshView(force: true)
         }
     }
